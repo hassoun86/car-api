@@ -13,4 +13,5 @@ export interface ICarService {
   getOne(id: string): Promise<ICar>;
   update(id: string, payload: ICar): Promise<ICar>;
   create(payload: ICar): Promise<ICar>;
+  delete(id: string): Promise<void>;
 }

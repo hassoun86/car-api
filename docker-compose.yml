@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  car-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    volumes:
+      - ./src:/home/node/app/src
+      - ./nodemon.json:/home/node/app/nodemon.json
+    container_name: car-api
+    expose:
+      - '3000'
+    ports:
+      - '3000:3000'
+    command: npm run dev
+  mongodb:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+
+volumes:
+  mongodb_data_container:

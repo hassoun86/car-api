@@ -13,10 +13,19 @@ const schema: JSONSchemaType<ICar> = {
     price: { type: 'number' },
     numberOfSeat: { type: 'number' },
   },
-  required: ['brand', 'color', 'fuelType', 'model', 'numberOfSeat', 'price', 'year'],
+  required: [],
   additionalProperties: false,
+  anyOf: [
+    { required: ['brand'] },
+    { required: ['color'] },
+    { required: ['model'] },
+    { required: ['fuelType'] },
+    { required: ['year'] },
+    { required: ['price'] },
+    { required: ['numberOfSeat'] },
+  ],
 };
 
-const carValidator = ajvInstance.compile(schema);
+const updateCarValidator = ajvInstance.compile(schema);
 
-export { carValidator };
+export { updateCarValidator };
