@@ -61,7 +61,6 @@ export class CarController {
     const { id } = req.params;
 
     const isValid = updateCarValidator(body);
-    console.log(isValid);
 
     if (!isValid) {
       return res.send(updateCarValidator.errors);
