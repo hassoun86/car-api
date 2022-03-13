@@ -32,16 +32,10 @@ Navigate where the docker-compose.yml is located and build the image (you can cu
 docker-compose build
 ```
 
-To run the db:
+To run the backend and the db:
 
 ```
-docker-compose up -d mongod
-```
-
-To run the backend
-
-```
-docker-compose up -d car-api
+docker-compose up -d
 ```
 
 navigate to http://localhost:3000/cars and we are good to go .
