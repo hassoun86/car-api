@@ -4,8 +4,8 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "prebuild": "tslint -c tslint.json -p tsconfig.json",
-    "build": "tsc",
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "./node_modules/.bin/tsc",
     "prestart": "npm run build",
     "start": "node .",
     "lint": "tslint -c tslint.json -p tsconfig.json",
@@ -33,10 +33,11 @@
     "ajv": "^8.10.0",
     "body-parser": "^1.19.2",
     "express": "^4.17.3",
-    "inversify": "^6.0.1",
     "mongoose": "^6.2.6",
+    "nodemon": "^2.0.15",
     "reflect-metadata": "^0.1.13",
-    "tsyringe": "^4.6.0",
+    "ts-node": "^10.7.0",
+    "tslog": "^3.3.2",
     "typedi": "^0.10.0"
   }
 }

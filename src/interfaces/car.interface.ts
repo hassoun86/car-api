@@ -9,8 +9,8 @@ export interface ICar {
 }
 
 export interface ICarService {
-    getAll(): Promise<ICar[]>;
-    get(): Promise<ICar>;
-    update(): Promise<ICar>;
-    create(): Promise<ICar>;
+  getAll(): Promise<ICar[]>;
+  getOne(id: string): Promise<ICar>;
+  update(id: string, payload: ICar): Promise<ICar>;
+  create(payload: ICar): Promise<ICar>;
 }
